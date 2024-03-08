@@ -2,6 +2,20 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.3.
 
+* Documentação do Angular: https://angular.io/docs
+* Documentação angular DEV: https://angular.dev/
+* Documentação do Angular Material: https://material.angular.io/components/categories
+
+## Passos para rodar o projeto
+
+* Instalando o gerenciador **nvm** de pacotes node: https://tecadmin.net/how-to-install-nvm-on-ubuntu-20-04/
+
+* Instalando uma determinada versão node 14.17.1: `nvm install 14.17.1`
+
+* instalando uma determinada versão do angular: `npm install -g @angular/cli@12.0.3`
+
+![alt text](image.png)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
