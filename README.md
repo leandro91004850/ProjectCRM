@@ -17,9 +17,12 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 * instalando uma determinada versão do angular: `npm install -g @angular/cli@12.0.3`
 
+* gerando o guard para proteger as rotas: `ng generate guard nomePasta/auth`
+
 ![alt text](image.png)
 
 * Instalando os modulos node: `npm install`
+* Gerando service para comunicação com a API: `ng generate service services/cliente`
 
 ## Development server
 
@@ -56,3 +59,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * Link: https://www.npmjs.com/package/ngx-toastr
 * versão usada:  14.3.0
 * instalando no projeto fixo: `npm install ngx-toastr@14.3.0 --save`
+
+## instalando o angular-jwt (autenticação)
+* Link: https://www.npmjs.com/package/angular-jwt
+* versão usada:  5.0.2
+* instalando a versão fixa: `npm install @auth0/angular-jwt@5.0.2 --save`
