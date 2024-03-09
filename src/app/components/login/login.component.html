@@ -5,15 +5,15 @@
 
             <mat-form-field class="full-width" appearance="fill">
                 <mat-label>Email</mat-label>
-                <input matInput placeholder="exemplo@gmail.com" >
+                <input [formControl]= "email" required [(ngModel)]="creds.email" name="email" matInput placeholder="exemplo@gmail.com" >
             </mat-form-field>
 
             <mat-form-field class="full-width" appearance="fill">
                 <mat-label>Senha</mat-label>
-                <input type="password" matInput placeholder="123">
+                <input [formControl]= "senha" required [(ngModel)]="creds.senha" name="password" matInput type="password" placeholder="**********">
             </mat-form-field>
 
-            <button class="full-width mat-elevation-z2" mat-flat-button color="primary">Login</button>
+            <button [disabled]="!validaCampos()" class="full-width mat-elevation-z2" mat-flat-button color="primary">Login</button>
         </form>
               
 </div>
