@@ -50,3 +50,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## gerando componentes
 * `ng generate component components/nav`
+
+
+## instalando o Ngx-toastr
+* Link: https://www.npmjs.com/package/ngx-toastr
+* instalando no projeto fixo: `npm i ngx-toastr --save`
