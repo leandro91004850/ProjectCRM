@@ -5,6 +5,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 * Documentação do Angular: https://angular.io/docs
 * Documentação angular DEV: https://angular.dev/
 * Documentação do Angular Material: https://material.angular.io/components/categories
+* site para cores css: https://cssgradient.io/
+* convert png para tipo verto: https://www.pngtosvg.com/ - https://convertio.co/pt/png-svg/ 
+
 
 ## Passos para rodar o projeto
 
