@@ -1,0 +1,22 @@
+.card{
+    width: 90%;
+    margin: auto;
+    background-color: rgba(243, 238, 238, 0.123);
+
+    /* create bord 3d*/
+    border: 1px solid #ece9e9;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #757474;
+    margin-top: 2rem;
+
+
+
+}
+
+img{
+    height: 10rem;
+
+    margin-left: auto;
+    margin-right: auto;
+
+}

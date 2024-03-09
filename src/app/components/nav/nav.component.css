@@ -4,7 +4,6 @@
 
 .sidenav{
     width: 13rem;
-    color: white;
     background: linear-gradient(324deg, rgb(163 162 179) 0%, rgb(32 32 149 / 95%) 72%, rgb(47 48 48) 100%)
 
 }
@@ -28,6 +27,11 @@ img{
 .menu{
     margin: 1rem 0 0 1rem;
     color: white;
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(70,70,230,1) 2%, rgba(0,212,255,1) 100%); 
+    background: linear-gradient(90deg, rgb(251, 251, 252) 0%, rgba(70,70,230,1) 2%, rgba(0,212,255,1) 100%); 
+}
 
+/*efect passar mouse*/
+.sidenav a:hover{
+    background-color: #f1f1f1;
+    color: black;
 }
