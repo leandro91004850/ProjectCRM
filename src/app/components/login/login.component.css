@@ -1,9 +1,16 @@
 .container{
     height: 100%;
-    background: linear-gradient(360deg, rgb(109 109 118) 0%, rgb(108, 108, 117) 2%, rgb(255 0 33) 100%);
+    background: linear-gradient(360deg, rgb(109 109 118) 0%, rgb(108, 108, 117) 2%, rgb(251, 255, 0) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
+
+    /*imagem de fundo*/
+    background-image: url('https://c1.wallpaperflare.com/path/898/284/844/stock-trading-monitor-desk-b13eeef2ca88b5860d85201ae0ecc309.jpg');
+    background-size: cover;
+    /* background-image cinza*/
+    background-color: rgb(209, 206, 206);
+    background-blend-mode: overlay;
 }
 
 .form{
