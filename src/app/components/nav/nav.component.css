@@ -16,18 +16,17 @@ img{
 
 .sidenav a{ 
     color: white;
-
 }
 
 .sidenav i{ 
     margin-right: .6rem;
-
 }
 
 .menu{
     margin: 1rem 0 0 1rem;
     color: white;
     background: linear-gradient(90deg, rgb(251, 251, 252) 0%, rgba(70,70,230,1) 2%, rgba(0,212,255,1) 100%); 
+    
 }
 
 /*efect passar mouse*/
