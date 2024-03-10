@@ -4,12 +4,14 @@ import { MatTableDataSource } from '@angular/material/table';
 
 import { Tecnico } from 'src/app/models/tecnico';
 import { TecnicoService } from 'src/app/services/tecnico.service';
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-tecnico-list',
   templateUrl: './tecnico-list.component.html',
-  styleUrls: ['./tecnico-list.component.css']
+  styleUrls: ['./tecnico-list.component.css'],
 })
+
 export class TecnicoListComponent implements OnInit {
 
   ELEMENT_DATA: Tecnico[] = []
@@ -20,7 +22,8 @@ export class TecnicoListComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(
-    private service: TecnicoService
+    private service: TecnicoService,
+    private spinner: NgxSpinnerService
   ) { }
 
   ngOnInit(): void {
@@ -28,11 +31,15 @@ export class TecnicoListComponent implements OnInit {
   }
 
   findAll() {
-    this.service.findAll().subscribe(resposta => {
-      this.ELEMENT_DATA = resposta
-      this.dataSource = new MatTableDataSource<Tecnico>(resposta);
-      this.dataSource.paginator = this.paginator;
-    })
+    this.spinner.show();
+    setTimeout(() => {
+      this.service.findAll().subscribe(resposta => {
+        this.ELEMENT_DATA = resposta;
+        this.dataSource.data = resposta;
+        this.dataSource.paginator = this.paginator;
+        this.spinner.hide();
+      });
+    }, 5000);
   }
 
   applyFilter(event: Event) { // metodo do filtro

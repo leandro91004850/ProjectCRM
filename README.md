@@ -75,6 +75,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * versão usada:  13.1.12
 * instalando a versão fixa: `npm install ngx-mask@13.1.12 --save`
 
+## instalando o ngx-spinner versao angular >=v12.0.0
+* Link: https://www.npmjs.com/package/ngx-spinner
+* comando: `npm i ngx-spinner@12.0.0 --save`
+
 
 * Verificando se foi limpo o localStorage: `localStorage.setItem('token')`
 ![alt text](src/assets/img/image-1.png)
