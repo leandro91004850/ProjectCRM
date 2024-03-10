@@ -59,6 +59,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * Link: https://www.npmjs.com/package/ngx-toastr
 * versão usada:  14.3.0
 * instalando no projeto fixo: `npm install ngx-toastr@14.3.0 --save`
+* test: https://ngx-toastr.vercel.app/
 
 ## instalando o angular-jwt (autenticação)
 * Link: https://www.npmjs.com/package/angular-jwt

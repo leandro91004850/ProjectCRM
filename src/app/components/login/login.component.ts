@@ -37,6 +37,9 @@ export class LoginComponent implements OnInit {
       this.toast.error('Usuário ou senha inválidos');
     })
 
+    // create mensage with toastr
+    this.toast.success('Logado com sucesso', 'Login', {timeOut: 7000})
+
   }
 
 
