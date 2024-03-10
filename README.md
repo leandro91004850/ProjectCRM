@@ -77,6 +77,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## instalando o ngx-spinner versao angular >=v12.0.0
 * Link: https://www.npmjs.com/package/ngx-spinner
+* Demos: https://napster2210.github.io/ngx-spinner/
 * comando: `npm i ngx-spinner@12.0.0 --save`
 
 

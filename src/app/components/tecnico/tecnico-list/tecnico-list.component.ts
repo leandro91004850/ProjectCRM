@@ -37,9 +37,10 @@ export class TecnicoListComponent implements OnInit {
         this.ELEMENT_DATA = resposta;
         this.dataSource.data = resposta;
         this.dataSource.paginator = this.paginator;
+        console.log(this.ELEMENT_DATA);
         this.spinner.hide();
       });
-    }, 5000);
+    });
   }
 
   applyFilter(event: Event) { // metodo do filtro
