@@ -19,7 +19,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 * gerando o guard para proteger as rotas: `ng generate guard nomePasta/auth`
 
-![alt text](image.png)
+![alt text](src/assets/img/image.png)
 
 * Instalando os modulos node: `npm install`
 * Gerando service para comunicação com a API: `ng generate service services/cliente`
@@ -64,3 +64,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * Link: https://www.npmjs.com/package/angular-jwt
 * versão usada:  5.0.2
 * instalando a versão fixa: `npm install @auth0/angular-jwt@5.0.2 --save`
+
+
+* Verificando se foi limpo o localStorage: `localStorage.setItem('token')`
+![alt text](src/assets/img/image-1.png)
