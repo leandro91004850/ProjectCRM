@@ -54,6 +54,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## gerando componentes
 * `ng generate component components/nav`
 
+## gerando interceptor
+* `ng generate interceptor interceptors/auth`
+
 
 ## instalando o Ngx-toastr (alerta mensagens)
 * Link: https://www.npmjs.com/package/ngx-toastr
