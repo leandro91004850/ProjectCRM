@@ -55,7 +55,7 @@ export class TecnicoUpdateComponent implements OnInit {
     }, ex => {
       console.log(ex);
       if(ex.error.errors){
-        ex.error.erros.foreach(element => {
+        ex.error.errors.forEach(element => {
           this.toast.error(element.message);
         });
       }else{
