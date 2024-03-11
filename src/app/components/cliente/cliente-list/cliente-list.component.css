@@ -1,0 +1,37 @@
+.container {
+    width: 90%;
+    margin: auto;
+    margin-top: 2rem;
+}
+
+table {
+    width: 100%;
+  }
+
+  mat-form-field {
+    width: 100%;
+ }
+ 
+ button {
+    width: 100%;
+ }
+ 
+ h1 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+ }
+
+.edit{
+   color: rgb(38, 193, 231);
+}
+
+.delete{
+   color: rgb(218, 14, 14);
+}
+
+.add{
+   color: rgb(22, 155, 22);
+   /*bold*/
+   font-weight: bold;
+}
