@@ -83,3 +83,20 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 * Verificando se foi limpo o localStorage: `localStorage.setItem('token')`
 ![alt text](src/assets/img/image-1.png)
+
+
+## Configurando o debug no VSCode
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "ng serve",
+            "url": "http://localhost:4200",
+            "webRoot": "${workspaceFolder}"
+        }
+    ]
+}
+```
