@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
-import { ToastrService } from 'ngx-toastr';
 import { HubsoftService } from 'src/app/services/hubsoft.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-nav',
@@ -10,31 +10,39 @@ import { HubsoftService } from 'src/app/services/hubsoft.service';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-
-  imagemLink: string;
+  name: string | null = '';
+  email: string | null = '';
+  imagemLink: string = '';
 
   constructor(
     private router: Router,
     private authService: AuthService,
     private hubsoftService: HubsoftService,
-    private toast: ToastrService) { }
-
+    private toast: ToastrService
+  ) {}
 
   ngOnInit(): void {
-    this.router.navigate(['/home']);
+    const userInfo = this.getUserInfo();
+    this.name = userInfo.name;
+    this.email = userInfo.email;
+    this.getAvatar();
   }
 
-  logout(){
-    this.router.navigate(['login'])
-    this.authService.logout(); //limpa o token do localstorage
-    this.toast.info('Logout realizado com sucesso', 'Logout', {timeOut: 7000})
+  logout() {
+    this.router.navigate(['login']);
+    this.authService.logout(); // limpa o token do localstorage
+    this.toast.info('Logout realizado com sucesso', 'Logout', { timeOut: 7000 });
   }
 
-  getImagem(){
+  getAvatar() {
     this.hubsoftService.getImagem().subscribe(resposta => {
-      this.imagemLink = resposta;
-    })
+      this.imagemLink = resposta.usuario.imagem.link;
+    });
   }
 
-
+  getUserInfo() {
+    const name = localStorage.getItem('name');
+    const email = localStorage.getItem('email');
+    return { name, email };
+  }
 }

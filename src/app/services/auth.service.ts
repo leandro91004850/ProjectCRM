@@ -21,8 +21,10 @@ export class AuthService {
     })
   }
 
-  successfullLogin(authToken: string){
+  successfullLogin(authToken: string, name: string, email: string){
     localStorage.setItem('token', authToken); //salva o token no localstorage
+    localStorage.setItem('name', name); //salva o nome no localstorage
+    localStorage.setItem('email', email); //salva o email no
   }
   
   EstaAutenticado(){

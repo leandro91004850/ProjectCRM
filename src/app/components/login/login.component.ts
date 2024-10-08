@@ -34,7 +34,9 @@ export class LoginComponent implements OnInit {
         console.log(resposta);
         const responseBody = JSON.parse(resposta.body);
         const accessToken = responseBody.access_token;
-        this.service.successfullLogin(accessToken);
+        const name = responseBody.user.name;
+        const email = responseBody.user.email;
+        this.service.successfullLogin(accessToken, name, email);
         this.router.navigate(['']);
         this.toast.success('Logado com sucesso', 'Login', {timeOut: 7000});
       }, () => {

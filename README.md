@@ -100,3 +100,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
     ]
 }
 ```
+
+## Rodando de forma expostar angular CLi: 
+* ```ng serve --host 0.0.0.0```
