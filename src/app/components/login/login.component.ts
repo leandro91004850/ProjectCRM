@@ -14,12 +14,12 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   creds: Credenciais = {
-    email: '',
-    senha: ''
+    username: '',
+    password: ''
   }
 
-  email = new FormControl(null, Validators.email);
-  senha = new FormControl(null, Validators.minLength(3));
+  username = new FormControl(null, Validators.email);
+  password = new FormControl(null, Validators.minLength(8));
 
   constructor(
     private toast: ToastrService,
@@ -30,21 +30,21 @@ export class LoginComponent implements OnInit {
   }
 
   logar(){
-    this.service.authenticate(this.creds).subscribe(resposta => {
-      this.service.successfullLogin(resposta.headers.get('Authorization').substring(7));
-      this.router.navigate([''])
-      this.toast.success('Logado com sucesso', 'Login', {timeOut: 7000})
-    }, () =>{
-      this.toast.error('Usuário ou senha inválidos');
-    })
-
-    
-
+      this.service.authenticate(this.creds).subscribe(resposta => {
+        console.log(resposta);
+        const responseBody = JSON.parse(resposta.body);
+        const accessToken = responseBody.access_token;
+        this.service.successfullLogin(accessToken);
+        this.router.navigate(['']);
+        this.toast.success('Logado com sucesso', 'Login', {timeOut: 7000});
+      }, () => {
+        this.toast.error('Usuário ou senha inválidos');
+      });
   }
 
 
   validaCampos(): boolean {
-    if(this.email.valid && this.senha.valid){
+    if(this.username.valid && this.password.valid){
       return true;
     }else{
       return false;
