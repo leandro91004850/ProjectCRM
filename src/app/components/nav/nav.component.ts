@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { ToastrService } from 'ngx-toastr';
+import { HubsoftService } from 'src/app/services/hubsoft.service';
 
 @Component({
   selector: 'app-nav',
@@ -10,9 +11,12 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class NavComponent implements OnInit {
 
+  imagemLink: string;
+
   constructor(
     private router: Router,
     private authService: AuthService,
+    private hubsoftService: HubsoftService,
     private toast: ToastrService) { }
 
 
@@ -24,6 +28,12 @@ export class NavComponent implements OnInit {
     this.router.navigate(['login'])
     this.authService.logout(); //limpa o token do localstorage
     this.toast.info('Logout realizado com sucesso', 'Logout', {timeOut: 7000})
+  }
+
+  getImagem(){
+    this.hubsoftService.getImagem().subscribe(resposta => {
+      this.imagemLink = resposta;
+    })
   }
 
 

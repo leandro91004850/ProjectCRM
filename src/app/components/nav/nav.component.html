@@ -1,39 +1,51 @@
-<mat-drawer-container class="container" autosize>
-    <mat-drawer #drawer class="sidenav" mode="side">
-       <img src="assets/img/angular.svg" alt="Imagem de navegação">
-       <mat-nav-list class="nav-list">
-          <a mat-list-item routerLink="home">
-             <i class="material-icons">home</i>
-             Home
-          </a>
-          <a mat-list-item routerLink="tecnicos">
-             <i class="material-icons">account_circle</i>
-             Técnicos
-          </a>
-          <a mat-list-item routerLink="clientes">
-             <i class="material-icons">person</i>
-             Clientes
-          </a>
-          <a mat-list-item routerLink="chamados">
-            <i class="material-icons">support</i>
-            chamados
-          </a>
-          <a mat-list-item routerLink="/">
-             <i class="material-icons">code</i>
-             Github
-          </a>
-          <a mat-list-item (click)="logout()">
-             <i class="material-icons">logout</i>
-             Logout
-          </a>
-       </mat-nav-list>
-    </mat-drawer>
- 
-    <div class="sidenav-content">
-        <app-header></app-header>
-       <button class="menu mat-elevation-z8" (click)="drawer.toggle()" mat-icon-button>
-          <mat-icon>menu</mat-icon>
-       </button>
-       <router-outlet></router-outlet>
-    </div>
+<mat-drawer-container autosize>
+   
+   <mat-sidenav opened="true">
+      <img
+        class="avatar mat-elevation-z8"
+        [src]="imagemLink"
+        alt="Avatar"
+      />
+  
+      <h4 class="name">Leandro Almeida</h4>
+      <p class="designation">leandroalmeida9100@gmail.com</p>
+  
+      <mat-divider></mat-divider>
+  
+      <button mat-button class="menu-button" routerLink="/home">
+        <mat-icon>home</mat-icon>
+        <span>Home</span>
+      </button>
+      <button mat-button class="menu-button" routerLink="exam">
+        <mat-icon>import_contacts</mat-icon>
+        <span>Exame</span>
+      </button>
+      <a mat-button class="menu-button" href="http://javeiro.com.br:7070" target="_blank">
+        <mat-icon>location_city</mat-icon>
+        <span>Listar Cidades</span>
+      </a>
+      <a mat-button class="menu-button" routerLink="llama3">
+        <mat-icon>adb</mat-icon>
+        <span>Artifial IA</span>
+      </a>
+      <a mat-button class="menu-button" routerLink="cidade">
+        <mat-icon>memory</mat-icon>
+        <span>Desafio CRUD</span>
+      </a>
+      <a mat-button class="menu-button" href="https://github.com/leandro91004850" target="_blank">
+         <mat-icon>code</mat-icon>
+         <span>GitHub</span>
+      </a>
+   
+      <mat-divider></mat-divider>
+  
+    <!--  <button mat-button class="menu-button" routerLink="/help">
+        <mat-icon>logout</mat-icon>
+        <span>Logout</span>
+      </button>-->
+   </mat-sidenav> 
+
+   <div class="sidenav-content">
+      <router-outlet></router-outlet>
+   </div>
  </mat-drawer-container>
