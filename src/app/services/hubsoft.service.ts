@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { API_CONFIG_HUBSOFT } from '../config/api.hubsoft';
 import { API_CONFIG } from '../config/api.config';
 
 interface ApiResponse {
@@ -27,7 +25,13 @@ export class HubsoftService {
   constructor(private http: HttpClient) { }
 
   getImagem(): Observable<ApiResponse> {
-   return this.http.get<ApiResponse>(`${API_CONFIG.baseUrl}/imagem_perfil`)
+      let token = localStorage.getItem('token');
+      if (token) {
+          const tokens = token.split(' ');
+          token = tokens[tokens.length - 1];
+      }
+      const headers = new HttpHeaders().set('Token_hubsoft', `Bearer ${token}`);
+      return this.http.get<ApiResponse>(`${API_CONFIG.baseUrl}/imagem_perfil`, { headers });
   }
 
   

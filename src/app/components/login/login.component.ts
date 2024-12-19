@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
         const name = responseBody.user.name;
         const email = responseBody.user.email;
         this.service.successfullLogin(accessToken, name, email);
-        this.router.navigate(['']);
+        this.router.navigate(['home']);
         this.toast.success('Logado com sucesso', 'Login', {timeOut: 7000});
       }, () => {
         this.toast.error('Usuário ou senha inválidos');
