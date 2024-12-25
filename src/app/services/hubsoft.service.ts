@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { API_CONFIG } from '../config/api.config';
+import { ClientesCidade } from '../models/clientesCidade';
 
 interface ApiResponse {
   status: string;
@@ -27,6 +28,10 @@ export class HubsoftService {
   getImagem(): Observable<ApiResponse> {
      const tokenHubsoft = localStorage.getItem('tokenHubsoft')
       return this.http.get<ApiResponse>(`${API_CONFIG.baseUrl}/hubtel/api/hubsoft/imagem_perfil/${tokenHubsoft}`);
+  }
+
+  findAllClientesCidade(): Observable<ClientesCidade[]> {
+    return this.http.get<ClientesCidade[]>(`${API_CONFIG.baseUrl}/hubtel/DB/hubsoft/relatorio_cliente_por_cidade`);
   }
 
   

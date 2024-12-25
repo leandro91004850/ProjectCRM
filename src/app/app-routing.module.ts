@@ -14,12 +14,14 @@ import { ClienteUpdateComponent } from './components/cliente/cliente-update/clie
 import { ClienteDeleteComponent } from './components/cliente/cliente-delete/cliente-delete.component';
 import { ChamadoListComponent } from './components/chamado/chamado-list/chamado-list.component';
 import { ChamadoCreateComponent } from './components/chamado/chamado-create/chamado-create.component';
+import { ClientesCidadeComponent } from './components/clientes-cidade/clientes-cidade.component';
 
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent},
   {
     path: '', component: NavComponent, canActivate:[AuthGuard], children:[ 
+      { path: 'clientes_cidade', component: ClientesCidadeComponent},
       { path: 'home', component: HomeComponent},
       { path: 'tecnicos', component:TecnicoListComponent},
       { path: 'tecnicos/create', component:TecnicoCreateComponent},

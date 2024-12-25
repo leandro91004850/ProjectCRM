@@ -1,0 +1,86 @@
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "pacman" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+
+<div class="container">
+   
+   <mat-form-field appearance="standard">
+      <mat-label>Filtrar região</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+    </mat-form-field>
+
+   <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource">
+
+         <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> ID </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+         </ng-container>
+
+         <ng-container matColumnDef="regiao">
+            <th mat-header-cell *matHeaderCellDef> Região </th>
+            <td mat-cell *matCellDef="let element"> {{element.regiao}} </td>
+         </ng-container>
+
+         <ng-container matColumnDef="servico_habilitado">
+            <th mat-header-cell *matHeaderCellDef> Serviço Habilitado </th>
+            <td mat-cell *matCellDef="let element"> {{element.servico_habilitado}} </td>
+         </ng-container>
+
+         <ng-container matColumnDef="suspenso_parcialmente">
+            <th mat-header-cell *matHeaderCellDef> Suspenso Parcialmente </th>
+            <td mat-cell *matCellDef="let element"> {{element.suspenso_parcialmente}} </td>
+         </ng-container>
+
+         <ng-container matColumnDef="suspenso_pedido_cliente">
+            <th mat-header-cell *matHeaderCellDef> Suspenso Pedido Cliente </th>
+            <td mat-cell *matCellDef="let element"> {{element.suspenso_pedido_cliente}} </td>
+         </ng-container>
+
+         <ng-container matColumnDef="aguardando_instalacao">
+            <th mat-header-cell *matHeaderCellDef> Aguardando Instalação </th>
+            <td mat-cell *matCellDef="let element"> {{element.aguardando_instalacao}} </td>
+         </ng-container>
+
+         <ng-container matColumnDef="suspenso_debito">
+            <th mat-header-cell *matHeaderCellDef> Suspenso Débito </th>
+            <td mat-cell *matCellDef="let element"> {{element.suspenso_debito}} </td>
+         </ng-container>
+
+         <ng-container matColumnDef="aguardando_migracao">
+            <th mat-header-cell *matHeaderCellDef> Aguardando Migração </th>
+            <td mat-cell *matCellDef="let element"> {{element.aguardando_migracao}} </td>
+         </ng-container>
+
+         <ng-container matColumnDef="total">
+            <th mat-header-cell *matHeaderCellDef> Total </th>
+            <td mat-cell *matCellDef="let element"> {{element.total}} </td>
+         </ng-container>
+
+         <ng-container matColumnDef="data_atualizacao">
+            <th mat-header-cell *matHeaderCellDef> Data Atualização </th>
+            <td mat-cell *matCellDef="let element"> {{element.data_atualizacao}} </td>
+         </ng-container>
+
+         <ng-container matColumnDef="acoes">
+            <th mat-header-cell *matHeaderCellDef> Ações </th>
+            <td mat-cell *matCellDef="let element"> 
+               <a routerLink="create">
+                  <i class="material-icons add">add</i>
+               </a>   
+
+              <a routerLink="update/{{ element.id }}">
+                 <i class="material-icons edit">edit</i>
+              </a>    
+              <a routerLink="delete/{{element.id}}">
+                  <i class="material-icons delete">delete</i>
+               </a>  
+           </td>
+         </ng-container>
+
+         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+      
+   </div>
+
+</div>
