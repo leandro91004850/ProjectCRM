@@ -33,10 +33,11 @@ export class LoginComponent implements OnInit {
       this.service.authenticate(this.creds).subscribe(resposta => {
         console.log(resposta);
         const responseBody = JSON.parse(resposta.body);
-        const accessToken = responseBody.access_token;
-        const name = responseBody.user.name;
-        const email = responseBody.user.email;
-        this.service.successfullLogin(accessToken, name, email);
+        const token = responseBody.token;
+        const tokenHubsoft = responseBody.tokenHubsoft;
+        const name = responseBody.name;
+        const email = responseBody.email;
+        this.service.successfullLogin(token, tokenHubsoft, name, email);
         this.router.navigate(['home']);
         this.toast.success('Logado com sucesso', 'Login', {timeOut: 7000});
       }, () => {

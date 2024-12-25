@@ -19,7 +19,7 @@ import { ChamadoCreateComponent } from './components/chamado/chamado-create/cham
 const routes: Routes = [
   { path: 'login', component: LoginComponent},
   {
-    path: '', component: NavComponent, canActivate:[AuthGuard], children:[
+    path: '', component: NavComponent, canActivate:[AuthGuard], children:[ 
       { path: 'home', component: HomeComponent},
       { path: 'tecnicos', component:TecnicoListComponent},
       { path: 'tecnicos/create', component:TecnicoCreateComponent},
@@ -34,7 +34,7 @@ const routes: Routes = [
       { path: 'chamados/create', component: ChamadoCreateComponent}
 
     ]
-  }
+  },
 ];
 
 @NgModule({

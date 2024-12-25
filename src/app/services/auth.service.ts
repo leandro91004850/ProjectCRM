@@ -15,14 +15,15 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   authenticate(creds: Credenciais){
-    return this.http.post(`${API_CONFIG.baseUrl}/login`, creds, {
+    return this.http.post(`${API_CONFIG.baseUrl}/api_hubtel/auth/login`, creds, {
       observe: 'response',
       responseType:'text'
     })
   }
 
-  successfullLogin(authToken: string, name: string, email: string){
-    localStorage.setItem('token', authToken); //salva o token no localstorage
+  successfullLogin(token: string, tokenHubsoft: string, name: string, email: string){
+    localStorage.setItem('token', token); //salva o token no localstorage
+    localStorage.setItem('tokenHubsoft', tokenHubsoft); //salva o tokenHubsoft no localstorage
     localStorage.setItem('name', name); //salva o nome no localstorage
     localStorage.setItem('email', email); //salva o email no
   }

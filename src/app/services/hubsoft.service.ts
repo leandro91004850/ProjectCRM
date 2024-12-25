@@ -25,13 +25,8 @@ export class HubsoftService {
   constructor(private http: HttpClient) { }
 
   getImagem(): Observable<ApiResponse> {
-      let token = localStorage.getItem('token');
-      if (token) {
-          const tokens = token.split(' ');
-          token = tokens[tokens.length - 1];
-      }
-      const headers = new HttpHeaders().set('Token_hubsoft', `Bearer ${token}`);
-      return this.http.get<ApiResponse>(`${API_CONFIG.baseUrl}/imagem_perfil`, { headers });
+     const tokenHubsoft = localStorage.getItem('tokenHubsoft')
+      return this.http.get<ApiResponse>(`${API_CONFIG.baseUrl}/hubtel/api/hubsoft/imagem_perfil/${tokenHubsoft}`);
   }
 
   
